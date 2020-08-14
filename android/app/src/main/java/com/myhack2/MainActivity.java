@@ -1,4 +1,4 @@
-package com.myhack;
+package com.myhack2;
 
 import android.os.Bundle;
 

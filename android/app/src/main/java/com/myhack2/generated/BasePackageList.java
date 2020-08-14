@@ -1,4 +1,4 @@
-package com.myhack.generated;
+package com.myhack2.generated;
 
 import java.util.Arrays;
 import java.util.List;

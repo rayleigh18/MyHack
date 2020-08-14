@@ -1,9 +1,9 @@
 {
-  "name": "MyHack",
-  "displayName": "MyHack",
+  "name": "MyHack2",
+  "displayName": "MyHack2",
   "expo": {
-    "name": "MyHack",
-    "slug": "MyHack",
+    "name": "MyHack2",
+    "slug": "MyHack2",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
