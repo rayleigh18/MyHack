@@ -11,4 +11,17 @@
        * Get Todo of User
        *
        */
+      /**
+       * The attributes that are mass assignable.
+       *
+       * @var array
+       */
+      protected $fillable = [
+         'hospital_id', 'number',
+      ];
+
+      public function hospital()
+      {
+         return $this->belongsTo('App\Hospitals');
+      }
     }

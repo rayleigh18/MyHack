@@ -11,6 +11,14 @@
        * Get Todo of User
        *
        */
+       /**
+       * The attributes that are mass assignable.
+       *
+       * @var array
+       */
+      protected $fillable = [
+         'service_id', 'hospital_id',
+      ];
 
        /**
        * The table associated with the model.

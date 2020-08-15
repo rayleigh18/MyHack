@@ -11,6 +11,14 @@
        * Get Todo of User
        *
        */
+      /**
+       * The attributes that are mass assignable.
+       *
+       * @var array
+       */
+      protected $fillable = [
+         'type', 'description', 'avg_time_minute'
+      ];
 
       public function patients() { 
          return $this->belongsToMany('App\Patients','patiens_queue'); 

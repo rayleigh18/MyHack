@@ -11,9 +11,22 @@
        * Get Todo of User
        *
        */
+      /**
+       * The attributes that are mass assignable.
+       *
+       * @var array
+       */
+       protected $fillable = [
+        'name', 'address', 'city', 'region', 'postal_code', 'coordinate'
+       ];
 
        public function services()
        {
          return $this->belongsToMany('App\Services', 'App\ServicesHospital', 'hospital_id', 'service_id');
+       }
+
+       public function phones()
+       {
+         return $this->hasMany('App\Phones');
        }
     }
