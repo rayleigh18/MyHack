@@ -18,7 +18,7 @@ class CreatePatientsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
-            $table->date('birth_date');
+            $table->date('birth_date');     //format tahun-bulan-tanggal
             $table->integer('nik');
             $table->string('address');
             $table->string('job');

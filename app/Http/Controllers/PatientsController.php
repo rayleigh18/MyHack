@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Patients;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class PatientsController extends Controller
 {
@@ -14,7 +16,7 @@ class PatientsController extends Controller
      */
     public function __construct()
     {
-        //
+        $this->middleware('auth');
     }
 
     public function showAll(Request $request){
@@ -26,8 +28,9 @@ class PatientsController extends Controller
     }
 
     public function create(Request $request){
-        $data = $request->json()->all();
-        $service = Services::create($data);
+        $data = $request->all();
+        $data['user_id'] = Auth::id();
+        $patient = Patients::create($data);
         return response()->json($data, 201);
     }
 

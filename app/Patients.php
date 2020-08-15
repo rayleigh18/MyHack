@@ -6,7 +6,7 @@
     class Patients extends Model 
     {
        //
-       protected $guarded = [];
+       protected $guarded = ['token_api'];
        /*
        * Get Todo of User
        *
