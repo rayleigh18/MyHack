@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, CheckBox, Button, Image } from 'react-native';
 import Device from "../../Device";
-import '../../index.css';
+// import '../../index.css';
 
 var landingImage = require ('../../data/img/landing.jpg');
 const LandingPage = () =>{

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {TouchableOpacity, StyleSheet, Text, View, Button, FlatList, Image } from 'react-native';
 import Device from "../../Device";
-import '../../index.css';
+// import '../../index.css';
 import data from '../../data/json/sample.json'
 import HospitalItem from '../Component/HospitalItem';
 import Icon from 'react-native-vector-icons/MaterialIcons'

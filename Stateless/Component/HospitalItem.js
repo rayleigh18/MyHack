@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, Button, Image,StyleSheet } from 'react-native';
 import Device from "../../Device"
-import "../../index.css"
+// import "../../index.css"
 
 export default class HospitalItem extends Component {
     render() {

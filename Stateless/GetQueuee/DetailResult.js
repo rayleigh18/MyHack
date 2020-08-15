@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, Button, Image,StyleSheet } from 'react-native';
 import Device from "../../Device"
-import "../../index.css"
+// import "../../index.css"
 import data from '../../data/json/sample.json'
 
 
