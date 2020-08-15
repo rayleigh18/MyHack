@@ -19,18 +19,21 @@ export default function App() {
         
         <Router>
           {/* <View styles = {styles.container}> */}
-            <Stack key="root" hideNavBar>
+            <Stack key="root" >
               <Scene key="landing"
                 component = {LandingPage}
                 title="Landing Page"
                 initial />
+
               <Stack key = "signup" >
                 <Scene key = "signup1"
-                  hideNavBar={true}
+                  hideNavBar
                   component = {RegisPage}/> 
                 <Scene key = "signup2"
+                   hideNavBar
                   component = {DataPribadi}/>
                 <Scene key = "signup3"
+                    hideNavBar
                   component = {RekamMedis}/>  
               </Stack>
               
@@ -38,17 +41,19 @@ export default function App() {
                 component = {LoginPage}
                 title = "Login"/>
 
-              <Scene key = "isLoggedIn" renderBackButton = {() => renderBackButton()}>
+              <Stack key = "isLoggedIn" renderBackButton = {() => renderBackButton()}>
                 <Scene key = "checkDaftar"
+                hideNavBar
                   component = {PendaftaranCheck}
                   title = "Check Register"
                   initial/>
                 <Scene key = "getQueue"
+                hideNavBar
                   component = {GetQueuee}
                   renderTitle = {
                     () => renderTitle()
                   } />
-              </Scene>
+              </Stack>
               
             </Stack>
 

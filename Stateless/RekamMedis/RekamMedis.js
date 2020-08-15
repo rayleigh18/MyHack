@@ -17,23 +17,23 @@ return(
         <Text style = {styles.judul}>
             REKAM MEDIS
         </Text>
-        <HeadInput weight = "Weight" 
+        <HeadInput name = "Weight" 
                     value = {weight} 
                     onChangeText = {onChangeweight}
                     placeholder = "in Kg"/>
-        <HeadInput weight = "Height" 
+        <HeadInput name = "Height" 
                     value = {height} 
                     onChangeText = {onChangeheight}
                     placeholder = "on cm"/>
-        <HeadInput weight = "Blood Type" 
+        <HeadInput name = "Blood Type" 
                     value = {bloodType} 
                     onChangeText = {onChangeBloodtype}
                     placeholder = "Type"/>
-        <HeadInput weight = "Disease History" 
+        <HeadInput name = "Disease History" 
                     value = {disease} 
                     onChangeText = {onChangedisease}
                     placeholder = "History"/>
-        <HeadInput weight = "Allergy" 
+        <HeadInput name = "Allergy" 
                     value = {allergy} 
                     onChangeText = {onChangeallergy}
                     placeholder = "Allergy"/>
