@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {TouchableOpacity, StyleSheet, Text, View, Button, FlatList, Image } from 'react-native';
 import Device from "../../Device";
-// import '../../index.css';
+import '../../index.css';
 import data from '../../data/json/sample.json'
 import HospitalItem from '../Component/HospitalItem';
 import Icon from 'react-native-vector-icons/MaterialIcons'
@@ -24,12 +24,13 @@ return(
             <Icon name="done-all" size={100} color={"#278CA1"} style={styles.doneIcon}/>
             <Text style={styles.reservationMessage}>Please visit <a style={{color : '#278CA1'}}>PHC Hospital Surabaya</a> on <a style={{color : '#278CA1'}}>Saturday, 22th August 2020</a> before <a style={{color : '#278CA1'}}>12.00</a></Text>
             <Text style={styles.queueDesc}>Your Queuee Number Is</Text>
-            <Text style={styles.queueeNum}><b>14</b></Text>
+            <Text style={styles.queueeNum}>14</Text>
         </View>
         <View style={styles.buttonPlace}>
             <Button title = "Back to Homepage"
                     color = "#278CA1"
             />
+            <View style={{width : 0.05*Device.Width}}></View>
             <Button title = "Cancel Order"
                 color = "#278CA1"
             />
@@ -53,6 +54,25 @@ return(
                 </TouchableOpacity>
             </View>
         </View>
+        {/* <NavigationContainer style={styles.tabBarContainer}>
+            <Tab.Navigator style={styles.tabBar}>
+                <Tab.Screen style={styles.tabItem}>
+                    <Icon name="add-circle-outline" size={30}/>
+                </Tab.Screen>
+                <Tab.Screen style={styles.tabItem}>
+                    <Icon name="error" size={30}/>
+                </Tab.Screen>
+                <Tab.Screen style={styles.tabItem}>
+                    <Icon name="home" size={30}/>
+                </Tab.Screen>
+                <Tab.Screen style={styles.tabItem}>
+                    <Icon name="event-available" size={30}/>
+                </Tab.Screen>
+                <Tab.Screen style={styles.tabItem}>
+                    <Icon name="person" size={30}/>
+                </Tab.Screen>
+            </Tab.Navigator>
+        </NavigationContainer> */}
     </View>
 );
 }
@@ -84,6 +104,7 @@ const styles = StyleSheet.create({
     queueeNum : {
         marginTop : 5,
         fontSize : 71,
+        fontStyle : 'bold',
         fontFamily : 'Raleway',
         color : '#278CA1'
     },
@@ -112,7 +133,6 @@ const styles = StyleSheet.create({
         justifyContent : 'flex-end',
     },
     tabBar : {
-        bottom : 0,
         backgroundColor : "#c4c4c4",
         height : 0.07*Device.Height,
         borderTopWidth : 0.5,
@@ -125,9 +145,16 @@ const styles = StyleSheet.create({
         justifyContent : 'center',
     },
     buttonPlace : {
-        paddingHorizontal : 0.3*Device.Width,
+        marginTop : 30,
+        width : 50,
+        paddingHorizontal : 0.5*Device.Width,
         flex : 1,
         justifyContent : "space-around",
+        flexDirection : 'row',
+        justifyContent : 'space-around',
+        alignItems : 'center',
+        alignContent : "center"
+        
     },
 
     buttons : {
