@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, TextInput } from 'react-native';
 import Device from "../../Device"
+import '../../index.css';
 
 const HeadInput = (props) =>{
     return(

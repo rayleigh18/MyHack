@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, CheckBox, Button } from 'react-native';
 import Device from "../../Device"
 import HeadInput from "../Component/HeadInput"
-import '../../index.css';
 import CardView from 'react-native-cardview'
 
 const DataPribadi = () =>{
@@ -11,35 +10,35 @@ const DataPribadi = () =>{
     const [id, onChangeId] = React.useState("");
     const [address, onChangeAddress] = React.useState("");
     const [work, onChangeWork] = React.useState("");
-    
+    const [check , onChangeCheck] = React.useState(false);
 return(
     
     <View style = {styles.container}>
         <Text style = {styles.judul}>
-            DATA PRIBADI
+            REKAM MEDIS
         </Text>
-        <HeadInput name = "Full Name" 
+        <HeadInput name = "Weight" 
                     value = {name} 
                     onChangeText = {onChangeName}
-                    placeholder = "Full Name"/>
-        <HeadInput name = "Date of Birth" 
+                    placeholder = "in Kg"/>
+        <HeadInput name = "Height" 
                     value = {birth} 
                     onChangeText = {onChangeBirth}
-                    placeholder = "Date"/>
-        <HeadInput name = "ID Number" 
+                    placeholder = "on cm"/>
+        <HeadInput name = "Blood Type" 
                     value = {id} 
                     onChangeText = {onChangeId}
-                    placeholder = "ID"/>
-        <HeadInput name = "Adress" 
+                    placeholder = "Type"/>
+        <HeadInput name = "Disease History" 
                     value = {address} 
                     onChangeText = {onChangeAddress}
                     secure = {true}
-                    placeholder = "Adress"/>
-        <HeadInput name = "Work" 
+                    placeholder = "History"/>
+        <HeadInput name = "Allergy" 
                     value = {work} 
                     secure = {true}
                     onChangeText = {onChangeWork}
-                    placeholder = "Work"/>
+                    placeholder = "Allergy"/>
 
         <View style = {styles.buttons}>
             <Button title = "NEXT"

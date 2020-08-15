@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, CheckBox, Button } from 'react-native';
 import Device from "../../Device"
 import HeadInput from "../Component/HeadInput"
+import '../../index.css';
 import CardView from 'react-native-cardview'
 
 const RegisPage = () =>{
