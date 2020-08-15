@@ -32,6 +32,8 @@ $router->get('/services',['middleware'=>'auth',function(Request $request){
     return $services;
 }]);
 
+$router->post("/hospital/newdata","HospitalController@insertData");
+
 	
 $router->post("/register", "UsersController@register");
 $router->post("/login", "UsersController@login");

@@ -69,7 +69,7 @@ class UsersController extends Controller
 
           $apikey = base64_encode(str::random(40));
 
-          $user->update(['api_key' => "$apikey"]);;
+          Users::where('email', $request->input('email'))->update(['api_token' => "$apikey"]);
 
           return response()->json([
             'success' => true,

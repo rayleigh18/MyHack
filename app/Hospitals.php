@@ -17,7 +17,7 @@
        * @var array
        */
        protected $fillable = [
-        'name', 'address', 'city', 'region', 'postal_code', 'coordinate'
+        'name', 'address', 'city', 'region', 'postal_code', 'coordinate','user_id'
        ];
 
        public function services()

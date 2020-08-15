@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\Hospitals;
+use Illuminate\Support\Facades\Auth;
 
 class HospitalController extends Controller
 {
@@ -11,7 +14,15 @@ class HospitalController extends Controller
      */
     public function __construct()
     {
-        //
+        $this->middleware('auth');
+    }
+
+    public function insertData(Request $req)
+    {
+        $data = $req->all();
+        $data['user_id'] = Auth::id();
+        Hospitals::create($data);
+        return ["success"=>"Pendaftaran rumah sakit selesai"];
     }
 
     public function addNewService(Request $request){

@@ -15,12 +15,14 @@ class CreateHospitalsTable extends Migration
     {
         Schema::create('hospitals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('address');
             $table->string('city');
             $table->string('region');
             $table->integer('postal_code');
-            $table->integer('coordinate');
+            $table->string('coordinate');
             $table->timestamps();
         });
     }
