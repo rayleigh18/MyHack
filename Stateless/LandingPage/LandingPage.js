@@ -16,6 +16,7 @@ return(
             <Button title = "Register Now!"
                 color = "#278CA1"
             />
+            {/* diteken ke register  */}
         </View>
         <Text style={styles.loginText}>Already have an Account? <b style={{color : '#000000'}}>Login</b></Text>
     </View>
