@@ -11,4 +11,8 @@
        * Get Todo of User
        *
        */
+
+      public function services() { 
+         return $this->belongsToMany('App\Services','App\PatiensQueue','patien_id','service_id'); 
+      }
     }

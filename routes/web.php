@@ -1,5 +1,7 @@
 <?php
 
+use App\PatiensQueue;
+
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -16,3 +18,16 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/queue/list/{service}',['middleware'=>'auth',function(Request $request, $service){
+    //mendapatkan daftar antrian pada suatu pelayanan rumah sakit
+    $userRS = Auth::users()->hospitals();
+    $queue = PatiensQueue::find()->where('hospital_id',$userRS->id)->where('services_id',$service);
+    return $queue;
+}]);
+
+$router->get('/services',['middleware'=>'auth',function(Request $request){
+    $userRS = Auth::users()->hospitals();
+    $services = $userRS->services();
+    return $services;
+}]);
