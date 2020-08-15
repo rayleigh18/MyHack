@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Sansation';
+    src: local('Sansation'), url(./data/font/Sansation_Regular.ttf) format('truetype');
+}
+@font-face {
+font-family: 'BebasNeue';
+src: local('BebasNeue'), url(./data/font/BebasNeue-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway'), url(./data/font/Raleway-Regular.ttf) format('truetype');
+}
