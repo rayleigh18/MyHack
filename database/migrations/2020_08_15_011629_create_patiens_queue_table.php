@@ -21,7 +21,7 @@ class CreatePatiensQueueTable extends Migration
             $table->foreign('hospital_id')->references('id')->on('hospitals');
             $table->unsignedBigInteger('service_id');
             $table->foreign('service_id')->references('id')->on('services');
-            $table->integer('queue_number');
+            $table->boolean('terlayani');
             $table->longText('keluhan');
             $table->timestamps();
         });

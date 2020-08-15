@@ -15,19 +15,17 @@ use App\PatiensQueue;
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('/', function () {
+    return view('landingPage');
 });
 
 $router->post("/register", "UsersController@register");
 $router->post("/login", "UsersController@login");
 
-$router->get('/queue/list/{service}',['middleware'=>'auth',function(Request $request, $service){
-    //mendapatkan daftar antrian pada suatu pelayanan rumah sakit
-    $userRS = Auth::users()->hospitals();
-    $queue = PatiensQueue::find()->where('hospital_id',$userRS->id)->where('services_id',$service);
-    return $queue;
-}]);
+$router->get('/patients',function () {
+    return view('patients');
+});
+$router->get('/patients/list/{service}','HospitalController@myPatients');
 
 $router->get('/services',['middleware'=>'auth',function(Request $request){
     $userRS = Auth::users()->hospitals();
@@ -36,6 +34,7 @@ $router->get('/services',['middleware'=>'auth',function(Request $request){
 }]);
 
 $router->post("/hospital/newdata","HospitalController@insertData");
+$router->post("/hospital/login","HospitalController@login");
 
 	
 $router->post("/register", "UsersController@register");

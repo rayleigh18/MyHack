@@ -5,7 +5,7 @@
     use Illuminate\Auth\Authenticatable as AuthenticableTrait;
     use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
-    class Users extends Model implements Authenticatable, AuthorizableContract
+    class Users extends Model implements Authenticatable
     {
        //
        use AuthenticableTrait;
@@ -20,5 +20,10 @@
        public function patient()
        {
            return $this->hasMany('App\Patients','user_id');
+       }
+
+       public function hospital()
+       {
+           return $this->hasOne('App\Hospitals','user_id');
        }
     }
