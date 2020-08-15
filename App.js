@@ -14,7 +14,7 @@ export default function App() {
 
         
         <Router>
-          <View styles = {styles.container}>
+          {/* <View styles = {styles.container}> */}
             <Scene key="root">
               <Scene key="landing"
                 component = {LandingPage}
@@ -27,11 +27,20 @@ export default function App() {
               <Scene key = "login"
                 component = {LoginPage}
                 title = "Login"/>
-              
+              <Scene key = "isLoggedIn">
+                <Scene key = "checkDaftar"
+                  component = {PendaftaranCheck}
+                  title = "Check Register"
+                  initial/>
+                <Scene key = "login"
+                  component = {LoginPage}
+                  title = "Login"/>
               </Scene>
+              
+            </Scene>
 
                 
-          </View>
+          {/* </View> */}
           
         
         </Router>    
@@ -46,6 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9f9f9',
     justifyContent : 'center',
     alignItems :'center',
+    
 
   },
 });
