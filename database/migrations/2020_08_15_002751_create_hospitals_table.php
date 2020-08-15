@@ -19,9 +19,8 @@ class CreateHospitalsTable extends Migration
             $table->string('address');
             $table->string('city');
             $table->string('region');
-            $table->int('postal_code');
-            $table->int('coordinate');
-            $table->timestamps();
+            $table->integer('postal_code');
+            $table->integer('coordinate');
         });
     }
 

@@ -18,16 +18,15 @@ class CreatePatientsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
-            $table->date('birthdate');
-            $table->int('nik');
+            $table->date('birth_date');
+            $table->integer('nik');
             $table->string('address');
             $table->string('job');
-            $table->int('weight');
-            $table->int('height');
-            $table->string('bloodtype');
-            $table->string('casehistories');
+            $table->integer('weight');
+            $table->integer('height');
+            $table->string('blood_type');
+            $table->string('case_histories');
             $table->string('allergies');
-            $table->timestamps();
         });
     }
 

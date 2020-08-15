@@ -19,7 +19,6 @@ class CreateDoctorsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nama_lengkap');
             $table->string('poli');
-            $table->timestamps();
         });
     }
 
