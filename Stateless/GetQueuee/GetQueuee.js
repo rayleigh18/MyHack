@@ -5,6 +5,7 @@ import Device from "../../Device";
 import data from '../../data/json/sample.json'
 import HospitalItem from '../Component/HospitalItem';
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import { ScrollView } from 'react-native-gesture-handler';
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -14,6 +15,7 @@ const GetQueuee = () =>{
 
 return(
     <View style = {styles.container}>
+        <ScrollView>
         <View style={styles.navBar}>
             <TouchableOpacity>
                 <Icon style={styles.navItem} name="arrow-back" size={20}/>
@@ -53,6 +55,8 @@ return(
                 </TouchableOpacity>
             </View>
         </View>
+        </ScrollView>
+        
     </View>
 );
 }
