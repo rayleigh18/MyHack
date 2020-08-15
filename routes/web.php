@@ -19,6 +19,9 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->post("/register", "UsersController@register");
+$router->post("/login", "UsersController@login");
+
 $router->get('/queue/list/{service}',['middleware'=>'auth',function(Request $request, $service){
     //mendapatkan daftar antrian pada suatu pelayanan rumah sakit
     $userRS = Auth::users()->hospitals();
@@ -32,6 +35,11 @@ $router->get('/services',['middleware'=>'auth',function(Request $request){
     return $services;
 }]);
 
-	
-$router->post("/register", "UsersController@register");
-$router->post("/login", "UsersController@login");
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('patients',  ['uses' => 'PatientsController@showAll']);
+    $router->get('patients/{id}', ['uses' => 'PatientsController@show']);
+    $router->post('patients', ['uses' => 'PatientsController@create']);
+    $router->delete('patients/{id}', ['uses' => 'PatientsController@delete']);
+    $router->put('patients/{id}', ['uses' => 'PatientsController@update']);
+});
