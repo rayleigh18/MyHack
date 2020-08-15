@@ -1,0 +1,69 @@
+
+{
+    "format" : [
+        {
+            "type" : "int",
+            "id" : "_id"
+        },
+        {
+            "type" : "text",
+            "id" : "hospital_name"
+        },
+        {
+            "type" : "text",
+            "id" : "poly"
+        },
+        {
+            "type" : "text",
+            "id" : "city"
+        },
+        {
+            "type" : "text",
+            "id" : "address"
+        },
+        {
+            "type" : "array",
+            "id" : "schedule"
+        },
+        {
+            "type" : "int",
+            "id" : "capacity"
+        },
+        {
+            "type" : "text",
+            "id" : "img_src"
+        }
+    ],
+    "info" : [
+        {
+            "_id": 1,
+            "hospital_name": "Darmo Hospital",
+            "poly": "Cardiologist",
+            "city": "Surabaya",
+            "address": "Jl. Raya Darmo No.90, DR. Soetomo, Kec. Tegalsari, Kota SBY, Jawa Timur 60264",
+            "schedule": ["10.00-13.00","14.00-17.00"],
+            "capacity": 5,
+            "img_src": "darmo.jpeg"
+        },
+        {
+            "_id": 2,
+            "hospital_name": "Darmo Hospital",
+            "poly": "General Poly",
+            "city": "Surabaya",
+            "address": "Jl. Raya Darmo No.90, DR. Soetomo, Kec. Tegalsari, Kota SBY, Jawa Timur 60264",
+            "schedule": ["10.00-13.00","14.00-17.00"],
+            "capacity": 10,
+            "img_src": "darmo.jpeg"
+        },
+        {
+            "_id": 3,
+            "hospital_name": "PHC Hospital Surabaya",
+            "poly": "Cardiologist",
+            "city": "Surabaya",
+            "address": "Jl. Prapat Kurung Selatan No.1, Tanjung Perak, Kec. Pabean Cantian, Kota SBY, Jawa Timur 60165",
+            "schedule": ["10.00-13.00","14.00-17.00"],
+            "capacity": 12,
+            "img_src": "PHC.jpg"
+        }
+    ]
+}
