@@ -5,7 +5,6 @@ import '../../index.css';
 
 var landingImage = require ('../../data/img/landing.jpg');
 const LandingPage = () =>{
-
 return(
     <View style = {styles.container}>
         <Text style = {styles.appName}>
@@ -20,7 +19,7 @@ return(
         </View>
         <Text style={styles.loginText}>Already have an Account? <b style={{color : '#000000'}}>Login</b></Text>
     </View>
-);
+    );
 }
 
 const styles = StyleSheet.create({

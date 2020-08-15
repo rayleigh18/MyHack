@@ -52,8 +52,7 @@ return(
             <Button title = "NEXT"
                 color = "#278CA1"
             />
-        </View>
-        
+        </View>       
         
     </View>
     

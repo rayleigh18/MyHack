@@ -4,39 +4,37 @@ import Device from "../../Device"
 import HeadInput from "../Component/HeadInput"
 import CardView from 'react-native-cardview'
 
-const DataPribadi = () =>{
-    const [name, onChangeName] = React.useState("");
-    const [birth, onChangeBirth] = React.useState("");
-    const [id, onChangeId] = React.useState("");
-    const [address, onChangeAddress] = React.useState("");
-    const [work, onChangeWork] = React.useState("");
+const RekamMedis = () =>{
+    const [weight, onChangeweight] = React.useState("");
+    const [height, onChangeheight] = React.useState("");
+    const [bloodType, onChangeBloodtype] = React.useState("");
+    const [disease, onChangedisease] = React.useState("");
+    const [allergy, onChangeallergy] = React.useState("");
 return(
     
     <View style = {styles.container}>
         <Text style = {styles.judul}>
             REKAM MEDIS
         </Text>
-        <HeadInput name = "Weight" 
-                    value = {name} 
-                    onChangeText = {onChangeName}
+        <HeadInput weight = "Weight" 
+                    value = {weight} 
+                    onChangeText = {onChangeweight}
                     placeholder = "in Kg"/>
-        <HeadInput name = "Height" 
-                    value = {birth} 
-                    onChangeText = {onChangeBirth}
+        <HeadInput weight = "Height" 
+                    value = {height} 
+                    onChangeText = {onChangeheight}
                     placeholder = "on cm"/>
-        <HeadInput name = "Blood Type" 
-                    value = {id} 
-                    onChangeText = {onChangeId}
+        <HeadInput weight = "Blood Type" 
+                    value = {bloodType} 
+                    onChangeText = {onChangeBloodtype}
                     placeholder = "Type"/>
-        <HeadInput name = "Disease History" 
-                    value = {address} 
-                    onChangeText = {onChangeAddress}
-                    secure = {true}
+        <HeadInput weight = "Disease History" 
+                    value = {disease} 
+                    onChangeText = {onChangedisease}
                     placeholder = "History"/>
-        <HeadInput name = "Allergy" 
-                    value = {work} 
-                    secure = {true}
-                    onChangeText = {onChangeWork}
+        <HeadInput weight = "Allergy" 
+                    value = {allergy} 
+                    onChangeText = {onChangeallergy}
                     placeholder = "Allergy"/>
 
         <View style = {styles.buttons}>
@@ -76,4 +74,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default DataPribadi;
+export default RekamMedis;

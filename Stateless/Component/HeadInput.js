@@ -7,14 +7,14 @@ const HeadInput = (props) =>{
         <View>
             <Text style = {{
                     
-                    height: 20,
+                    height: 23,
                     marginTop : 0,
                     padding : 0,
                     
                     fontFamily: "Raleway-Regular",
                     fontStyle : "normal",
                     fontWeight : "normal",
-                    fontSize : 23,
+                    fontSize : 15,
                     lineHeight : 23
                 }}>
                 {props.name}
@@ -25,10 +25,11 @@ const HeadInput = (props) =>{
                 onChangeText={text => props.onChangeText(text)}
                 style={{
                     width : 286,
+                    height : 30,
                     padding : 0,
                     
-                    marginTop : 0,
-                    marginBottom : 10,
+                    marginTop : 10,
+                    marginBottom : 5,
                     borderRadius: 10,
                     fontSize : 15,
                     marginLeft : 3,
