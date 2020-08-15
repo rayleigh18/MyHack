@@ -1,7 +1,6 @@
 import React from 'react';
 import {Text, View, TextInput } from 'react-native';
-import Device from "../../Device"
-import '../../index.css';
+import Device from "../../Device";
 
 const HeadInput = (props) =>{
     return(
@@ -12,7 +11,7 @@ const HeadInput = (props) =>{
                     marginTop : 0,
                     padding : 0,
                     
-                    fontFamily: "Raleway",
+                    fontFamily: "Raleway-Regular",
                     fontStyle : "normal",
                     fontWeight : "normal",
                     fontSize : 23,
@@ -33,6 +32,9 @@ const HeadInput = (props) =>{
                     borderRadius: 10,
                     fontSize : 15,
                     marginLeft : 3,
+
+                    borderColor : '#2BA4B9',
+                    borderWidth : 1
                 }}
                 placeholder = {props.placeholder}
             />

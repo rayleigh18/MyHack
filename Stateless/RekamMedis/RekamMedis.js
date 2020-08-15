@@ -10,7 +10,6 @@ const DataPribadi = () =>{
     const [id, onChangeId] = React.useState("");
     const [address, onChangeAddress] = React.useState("");
     const [work, onChangeWork] = React.useState("");
-    const [check , onChangeCheck] = React.useState(false);
 return(
     
     <View style = {styles.container}>
@@ -56,6 +55,7 @@ const styles = StyleSheet.create({
     judul : {
         color : '#278CA1',
         fontSize : 46,
+        fontFamily : "BebasNeue-Regular",
         marginBottom : 20,
     },
     container : {

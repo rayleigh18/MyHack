@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, CheckBox, Button } from 'react-native';
 import Device from "../../Device"
 import HeadInput from "../Component/HeadInput"
-import '../../index.css';
 import CardView from 'react-native-cardview'
 
 const RegisPage = () =>{
@@ -64,6 +63,7 @@ return(
 const styles = StyleSheet.create({
     judul : {
         color : '#278CA1',
+        fontFamily : "BebasNeue-Regular",
         fontSize : 46,
         marginBottom : 20,
     },

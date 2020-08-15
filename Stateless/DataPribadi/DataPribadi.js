@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     judul : {
         color : '#278CA1',
         fontSize : 46,
+        fontFamily : "BebasNeue-Regular",
         marginBottom : 20,
     },
     container : {
