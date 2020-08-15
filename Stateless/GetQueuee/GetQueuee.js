@@ -3,7 +3,7 @@ import {TouchableOpacity, StyleSheet, Text, View, Button, FlatList, Image } from
 import Device from "../../Device";
 // import '../../index.css';
 import data from '../../data/json/sample.json'
-import HospitalItem from '../Component/HospitalItem';
+// import HospitalItem from '../Component/HospitalItem';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { ScrollView } from 'react-native-gesture-handler';
 // import { NavigationContainer } from '@react-navigation/native';

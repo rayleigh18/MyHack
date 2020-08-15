@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, CheckBox, Button } from 'react-native';
 import Device from "../../Device"
 import HeadInput from "../Component/HeadInput"
 import CardView from 'react-native-cardview'
+import { Actions } from 'react-native-router-flux';
 
 const RekamMedis = () =>{
     const [weight, onChangeweight] = React.useState("");
@@ -40,6 +41,9 @@ return(
         <View style = {styles.buttons}>
             <Button title = "NEXT"
                 color = "#278CA1"
+                onPress = {()  =>{
+                    Actions.login();
+                }}
             />
         </View>
         

@@ -4,6 +4,7 @@ import Device from "../../Device"
 import HeadInput from "../Component/HeadInput"
 import CardView from 'react-native-cardview'
 import { ScrollView } from 'react-native-gesture-handler';
+import { Actions } from 'react-native-router-flux';
 
 const RegisPage = () =>{
     const [user, onChangeUser] = React.useState("");
@@ -53,6 +54,9 @@ return(
         <View style = {styles.buttons}>
             <Button title = "NEXT"
                 color = "#278CA1"
+                onPress = {() =>{
+                    Actions.signup2();
+                }}
             />
         </View>  
     </ScrollView>
