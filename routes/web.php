@@ -36,14 +36,10 @@ $router->get('/services',['middleware'=>'auth',function(Request $request){
 $router->post("/hospital/newdata","HospitalController@insertData");
 $router->post("/hospital/login","HospitalController@login");
 
-	
-$router->post("/register", "UsersController@register");
-$router->post("/login", "UsersController@login");
-
-$router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('patients',  ['uses' => 'PatientsController@showAll']);
-    $router->get('patients/{id}', ['uses' => 'PatientsController@show']);
-    $router->post('patients', ['uses' => 'PatientsController@create']);
-    $router->delete('patients/{id}', ['uses' => 'PatientsController@delete']);
-    $router->put('patients/{id}', ['uses' => 'PatientsController@update']);
+$router->group(['prefix' => 'patients'], function () use ($router) {
+    $router->get('',  ['uses' => 'PatientsController@showAll']);
+    $router->get('/{id}', ['uses' => 'PatientsController@show']);
+    $router->post('', ['uses' => 'PatientsController@create']);
+    $router->delete('/{id}', ['uses' => 'PatientsController@delete']);
+    $router->put('/{id}', ['uses' => 'PatientsController@update']);
 });

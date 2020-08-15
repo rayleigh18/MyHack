@@ -3,7 +3,6 @@
     use Illuminate\Database\Eloquent\Model;
     use Illuminate\Contracts\Auth\Authenticatable;
     use Illuminate\Auth\Authenticatable as AuthenticableTrait;
-    use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
     class Users extends Model implements Authenticatable
     {
