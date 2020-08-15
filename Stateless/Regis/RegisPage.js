@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, CheckBox, Button } from 'react-native';
 import Device from "../../Device"
 import HeadInput from "../Component/HeadInput"
 import CardView from 'react-native-cardview'
+import { ScrollView } from 'react-native-gesture-handler';
 
 const RegisPage = () =>{
     const [user, onChangeUser] = React.useState("");
@@ -14,7 +15,8 @@ const RegisPage = () =>{
 return(
     
     <View style = {styles.container}>
-        <Text style = {styles.judul}>
+    <ScrollView>
+    <Text style = {styles.judul}>
             Registration
         </Text>
         <HeadInput name = "Username" 
@@ -52,7 +54,9 @@ return(
             <Button title = "NEXT"
                 color = "#278CA1"
             />
-        </View>       
+        </View>  
+    </ScrollView>
+             
         
     </View>
     
@@ -68,9 +72,10 @@ const styles = StyleSheet.create({
     },
     container : {
         backgroundColor : '#f9f9f9',
-        marginRight : 14,
-        marginLeft : 15,
+        justifyContent : 'center',
+        alignItems : 'center',
         marginTop : 10,
+
     },
     checkBox :{
         padding : 0,

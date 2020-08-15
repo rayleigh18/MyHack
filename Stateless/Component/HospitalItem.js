@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     },
     button : {
         marginTop : 15,
-        fontFamily : 'Raleway',
+        fontFamily : 'Raleway-Regular',
         alignItems : 'center',
         alignContent : "center",
         height : 26,

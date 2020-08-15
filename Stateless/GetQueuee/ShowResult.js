@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     },
     descResult : {
         fontSize : 16,
-        fontFamily : 'Raleway',
+        fontFamily : 'Raleway-Regular',
         marginBottom : 20,
         marginTop : 20,
         width : 0.7*Device.Width,

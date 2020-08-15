@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
 import Device from "../../Device";
 import {main_logo} from "../../assets/img/index";
+import { ScrollView } from 'react-native-gesture-handler';
+import { Actions } from 'react-native-router-flux';
 
 
 export default class LoginPage extends Component{
@@ -25,7 +27,8 @@ export default class LoginPage extends Component{
     render(){
         return(
             <View style = {styles.container}>
-                <View style = {styles.container_in}>
+                <ScrollView>
+                    <View style = {styles.container_in}>
                     <Text style = {styles.judul}>GO-RS</Text> 
                     <Image source={main_logo} style={styles.mainLogo} />
                     <Text >Username</Text>
@@ -47,9 +50,14 @@ export default class LoginPage extends Component{
                     <Button title = "Submit"
                             color = "#278CA1"
                             onPress = {this.handleSubmit}/>
-                    <Text>First Time? Sign Up</Text>
+                    <Text>First Time?</Text>
+                    <Text style = {{
+                        paddingBottom : 20,
+                    }} onPress = {()=>Actions.signup()}>Sign Up</Text>
                 </View>
                
+                </ScrollView>
+                
             </View>
         );
     }
@@ -58,7 +66,6 @@ export default class LoginPage extends Component{
 const styles = StyleSheet.create({
     container : {
         backgroundColor : '#2BA4B9',
-        height : Device.Height,
         alignItems : "center",
     },
     container_in : {
