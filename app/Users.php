@@ -7,9 +7,9 @@
     {
        //
        use AuthenticableTrait;
-       protected $fillable = ['username','email','password','noHp'];
+       protected $fillable = ['username','email','password','no_hp','api_token'];
        protected $hidden = [
-       'password'
+       'password', 'api_token'
        ];
        /*
        * Get Todo of User

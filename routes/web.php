@@ -31,3 +31,7 @@ $router->get('/services',['middleware'=>'auth',function(Request $request){
     $services = $userRS->services();
     return $services;
 }]);
+
+	
+$router->post("/register", "UsersController@register");
+$router->post("/login", "UsersController@login");

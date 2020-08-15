@@ -27,6 +27,7 @@ class CreatePatientsTable extends Migration
             $table->string('blood_type');
             $table->string('case_histories');
             $table->string('allergies');
+            $table->timestamps();
         });
     }
 
