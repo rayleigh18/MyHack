@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, CheckBox, Button, Image } from 'react-native';
 import Device from "../../Device";
+import {Actions} from 'react-native-router-flux';
 // import '../../index.css';
 
 var landingImage = require ('../../data/img/landing.jpg');
@@ -11,14 +12,15 @@ return(
             GO-RS
         </Text>
         <Image source={landingImage} style={styles.image} />
-        <Text style={styles.openingText}>Health is really important for human. Always keep our healthy with <a style={{color : "#278CA1"}}>GO-RS</a> </Text>
+        <Text style={styles.openingText}>Health is really important for human. Always keep our healthy with GO-RS </Text>
         <View style = {styles.buttons}>
             <Button title = "Register Now!"
                 color = "#278CA1"
+                onPress = {() => Actions.signup()}
             />
             {/* diteken ke register  */}
         </View>
-        <Text style={styles.loginText}>Already have an Account? <b style={{color : '#000000'}}>Login</b></Text>
+        <Text style={styles.loginText}>Already have an Account? Login</Text>
     </View>
     );
 }
