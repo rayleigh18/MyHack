@@ -38,4 +38,5 @@ $router->group(['prefix' => 'patients'], function () use ($router) {
     $router->post(  '',         ['uses' => 'PatientsController@create']);
     $router->delete('/{id}',    ['uses' => 'PatientsController@delete']);
     $router->put(   '/{id}',    ['uses' => 'PatientsController@update']);
+    $router->post(   '/book/{id}',    ['uses' => 'PatientsController@book']);
 });

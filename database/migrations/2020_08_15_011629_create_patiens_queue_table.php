@@ -23,6 +23,7 @@ class CreatePatiensQueueTable extends Migration
             $table->foreign('service_id')->references('id')->on('services');
             $table->boolean('terlayani');
             $table->longText('keluhan');
+            $table->integer('wait_minute');
             $table->timestamps();
         });
     }
