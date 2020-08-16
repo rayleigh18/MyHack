@@ -31,6 +31,7 @@ $router->get('/services/list','HospitalController@myServices');
 
 $router->post("/hospital/newdata","HospitalController@insertData");
 $router->post("/hospital/login","HospitalController@login");
+$router->get("/hospital/near/{x}/{y}","HospitalController@near");
 
 $router->group(['prefix' => 'patients'], function () use ($router) {
     $router->get(   '',         ['uses' => 'PatientsController@showAll']);
