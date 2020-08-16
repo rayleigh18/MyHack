@@ -1,41 +1,40 @@
-import React, { Component } from 'react'
-import {TouchableOpacity, StyleSheet, Text, View, Button, FlatList, Image } from 'react-native';
+import React, { useState } from 'react'
+import {TouchableOpacity, StyleSheet, Text, View, Picker} from 'react-native';
 import Device from "../../Device";
 import '../../index.css';
-import data from '../../data/json/sample.json'
-// import HospitalItem from '../Component/HospitalItem';
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import { ScrollView } from 'react-native-gesture-handler';
+// import RNPickerSelect from 'react-native-picker-select'
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // const Tab = createBottomTabNavigator();
-  
-const GetQueuee = () =>{
 
+var loc = 'Somewhere'
+const Emergency = () =>{
+    const [selectedValue, setSelectedValue] = useState("ambulance");
 return(
     <View style = {styles.container}>
-        <ScrollView>
         <View style={styles.navBar}>
             <TouchableOpacity>
                 <Icon style={styles.navItem} name="arrow-back" size={20}/>
             </TouchableOpacity>
         </View>
         <View style={styles.body}>
-            <Text style={styles.successMessage}>Your Order Has Been Processed!</Text>
-            <Icon name="done-all" size={100} color={"#278CA1"} style={styles.doneIcon}/>
-            <Text style={styles.reservationMessage}>Please visit <a style={{color : '#278CA1'}}>PHC Hospital Surabaya</a> on <a style={{color : '#278CA1'}}>Saturday, 22th August 2020</a> before <a style={{color : '#278CA1'}}>12.00</a></Text>
-            <Text style={styles.queueDesc}>Your Queuee Number Is</Text>
-            <Text style={styles.queueeNum}>14</Text>
-        </View>
-        <View style={styles.buttonPlace}>
-            <Button title = "Back to Homepage"
-                    color = "#278CA1"
-            />
-            <View style={{width : 0.05*Device.Width}}></View>
-            <Button title = "Cancel Order"
-                color = "#278CA1"
-            />
+            <Text style={styles.descService}>You are around {loc} area</Text>
+            <Text style={styles.descService}>Which service will you need?</Text>
+            <Picker
+                selectedValue={selectedValue}
+                style={{ height: 30, width: 150, marginTop : 50, marginBottom : 30 }}
+                onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+            >
+                <Picker.Item label="Ambulance" value="ambulance" />
+                <Picker.Item label="FirstAid" value="first-aid" />
+                <Picker.Item label="Doctor" value="doctor" />
+                <Picker.Item label="Midwife" value="midwife" />
+            </Picker>
+            <TouchableOpacity>
+                <Icon name="error" size={0.6*Device.Width} color={"#EF2B2B"} style={styles.emergencyIcon}/>
+            </TouchableOpacity>
         </View>
         <View style={styles.tabBarContainer}>
             <View style={styles.tabBar}>
@@ -56,8 +55,6 @@ return(
                 </TouchableOpacity>
             </View>
         </View>
-        </ScrollView>
-        
     </View>
 );
 }
@@ -86,32 +83,14 @@ const styles = StyleSheet.create({
         alignItems : "center",
         alignContent : 'center'
     },
-    queueeNum : {
-        marginTop : 5,
-        fontSize : 71,
-        fontStyle : 'bold',
+    descService : {
+        marginTop : 20,
+        fontSize : 17,
         fontFamily : 'Raleway',
-        color : '#278CA1'
-    },
-    queueDesc : {
-        fontSize : 20,
-        fontFamily : 'Raleway',
-    },
-    successMessage : {
-        marginBottom : 20,
-        fontSize : 29,
-        fontFamily : 'Raleway',
-        width : 0.5*Device.Width,
-        textAlign : 'center',
-        marginTop : 30
-    },
-    reservationMessage : {
-        fontSize : 22,
-        fontFamily : 'Raleway',
-        width : 0.5*Device.Width,
-        textAlign : 'center',
-        marginBottom : 20,
-        marginTop : 10
+        width : 0.6*Device.Width,
+        alignContent : "center",
+        alignItems : "center",
+        textAlign : "center"
     },
     tabBarContainer : {
         flex : 1,
@@ -129,25 +108,10 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         justifyContent : 'center',
     },
-    buttonPlace : {
-        marginTop : 30,
-        width : 50,
-        paddingHorizontal : 0.5*Device.Width,
-        flex : 1,
-        justifyContent : "space-around",
-        flexDirection : 'row',
-        justifyContent : 'space-around',
-        alignItems : 'center',
-        alignContent : "center"
-        
-    },
-
-    buttons : {
-        paddingTop : 10,
-        fontFamily : 'Raleway',
+    emergencyIcon : {
         alignItems : 'center',
     },
 })
 
 
-export default GetQueuee;
+export default Emergency;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {TouchableOpacity, StyleSheet, Text, View, Button, FlatList, Image } from 'react-native';
 import Device from "../../Device";
-// import '../../index.css';
+import '../../index.css';
 import data from '../../data/json/sample.json'
 import HospitalItem from '../Component/HospitalItem';
 import Icon from 'react-native-vector-icons/MaterialIcons'
@@ -10,44 +10,45 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 // const Tab = createBottomTabNavigator();
   
-const ShowResult = () =>{
-
-return(
-    <View style = {styles.container}>
-        <View style={styles.navBar}>
-            <TouchableOpacity>
-                <Icon style={styles.navItem} name="arrow-back" size={20}/>
-            </TouchableOpacity>
-        </View>
-        <View style={styles.body}>
-        <Text style={styles.descResult}>Based on your input, we recommend you to visit hospitals below</Text>
-            <FlatList
-            data={data.info}
-            renderItem={(hospital) => <HospitalItem hospital={hospital.item}/>}
-            keyExtractor = {(item) => item._id}
-            ItemSeparatorComponent={()=><View style={{height : 0.05*Device.Height, backgroundColor : 'e5e5e5'}}/>}
-            />
-        </View>
-        
-        <View style={styles.tabBar}>
-            <TouchableOpacity style={styles.tabItem}>
-                <Icon name="add-circle-outline" size={30}/>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.tabItem}>
-                <Icon name="error" size={30}/>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.tabItem}>
-                <Icon name="home" size={30}/>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.tabItem}>
-                <Icon name="event-available" size={30}/>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.tabItem}>
-                <Icon name="person" size={30}/>
-            </TouchableOpacity>
-        </View>
-    </View>
-);
+export default class ShowResult extends Component{
+    render(){
+        return(
+            <View style = {styles.container}>
+                <View style={styles.navBar}>
+                    <TouchableOpacity>
+                        <Icon style={styles.navItem} name="arrow-back" size={20}/>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.body}>
+                <Text style={styles.descResult}>Based on your input, we recommend you to visit hospitals below</Text>
+                    <FlatList
+                    data={data.info}
+                    renderItem={(hospital) => <HospitalItem hospital={hospital.item}/>}
+                    keyExtractor = {(item) => item._id}
+                    ItemSeparatorComponent={()=><View style={{height : 0.05*Device.Height, backgroundColor : 'e5e5e5'}}/>}
+                    />
+                </View>
+                
+                <View style={styles.tabBar}>
+                    <TouchableOpacity style={styles.tabItem}>
+                        <Icon name="add-circle-outline" size={30}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.tabItem}>
+                        <Icon name="error" size={30}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.tabItem}>
+                        <Icon name="home" size={30}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.tabItem}>
+                        <Icon name="event-available" size={30}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.tabItem}>
+                        <Icon name="person" size={30}/>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        );        
+    }
 }
 
 const styles = StyleSheet.create({
@@ -62,7 +63,8 @@ const styles = StyleSheet.create({
         fontFamily : 'Raleway-Regular',
         marginBottom : 20,
         marginTop : 20,
-        width : 0.7*Device.Width
+        width : 0.7*Device.Width,
+        flex :1
     },
     navBar : {
         height : 0.05*Device.Height,
@@ -100,6 +102,3 @@ const styles = StyleSheet.create({
         height : 44,
     },
 })
-
-
-export default ShowResult;
