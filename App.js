@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import {Router, Scene, Stack} from 'react-native-router-flux';
 
@@ -9,62 +9,78 @@ import DataPribadi from "./Stateless/DataPribadi/DataPribadi"
 import PendaftaranCheck from "./Stateless/PendaftaranCheck/PendaftaranCheck";
 import LoginPage from "./Stateful/LoginPage/LoginPage";
 import GetQueuee from "./Stateless/GetQueuee/GetQueuee"
+import QueueeCounter from "./Stateless/QueueeSystem/QueueeCounter";
 
 // import GetQueuee from "./Stateless/GetQueuee/GetQueuee"
 
 
-export default function App() {
-  return (
+export default class App extends Component {
+  state = {
+    isLogIn : false,
+  }
+  isLogInVar(){
+    return(
+      <Stack key = "login" >
+              <Scene key = "checkDaftar"
+              hideNavBar
+                component = {PendaftaranCheck}
+                title = "Check Register"/>
+              <Scene key = "getQueue"
+              hideNavBar
+                component = {GetQueuee}
+                renderTitle = {
+                  () => renderTitle()
+                } />
 
-        
-        <Router>
-          {/* <View styles = {styles.container}> */}
-            <Stack key="root" >
-              <Scene key="landing"
-                component = {LandingPage}
-                title="Landing Page"
-                initial />
-
-              <Stack key = "signup" >
-                <Scene key = "signup1"
-                  hideNavBar
-                  component = {RegisPage}/> 
-                <Scene key = "signup2"
-                   hideNavBar
-                  component = {DataPribadi}/>
-                <Scene key = "signup3"
-                    hideNavBar
-                  component = {RekamMedis}/>  
-              </Stack>
-              
-              <Scene key = "login"
-                component = {LoginPage}
-                title = "Login"/>
-
-              <Stack key = "isLoggedIn" renderBackButton = {() => renderBackButton()}>
-                <Scene key = "checkDaftar"
+              <Scene key = "queueCount"
                 hideNavBar
-                  component = {PendaftaranCheck}
-                  title = "Check Register"
-                  initial/>
-                <Scene key = "getQueue"
-                hideNavBar
-                  component = {GetQueuee}
-                  renderTitle = {
-                    () => renderTitle()
-                  } />
-              </Stack>
-              
-            </Stack>
-
-                
-          {/* </View> */}
-          
-        
-        </Router>    
-
+                component={QueueeCounter}
+                />
+        </Stack>
+    );
+  }
+  notIsLogInVar(){
+    return(
+    <Scene key = "login"
+    component = {LoginPage}
+    title = "Login"/> 
+    );
+  }
+  render(){
     
-  );
+    return (        
+      <Router>
+        {/* <View styles = {styles.container}> */}
+          <Stack key="root" >
+            <Scene key="landing"
+              component = {LandingPage}
+              title="Landing Page"
+              initial />
+
+            <Stack key = "signup" >
+              <Scene key = "signup1"
+                hideNavBar
+                component = {RegisPage}/> 
+              <Scene key = "signup2"
+                hideNavBar
+                component = {DataPribadi}/>
+              <Scene key = "signup3"
+                  hideNavBar
+                component = {RekamMedis}/>  
+            </Stack>
+            
+          {this.state.isLogIn ? this.isLogInVar() : this.notIsLogInVar()}
+            
+          </Stack>
+
+              
+        {/* </View> */}
+        
+      
+      </Router>   
+);
+  }
+  
 }
 
 const styles = StyleSheet.create({

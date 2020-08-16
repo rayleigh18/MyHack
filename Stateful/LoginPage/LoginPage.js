@@ -8,8 +8,8 @@ import { Actions } from 'react-native-router-flux';
 
 export default class LoginPage extends Component{
     state = {
-        username : '',
-        password : ''
+        username : "",
+        password : ""
     }
     constructor(){
         super();
@@ -21,9 +21,21 @@ export default class LoginPage extends Component{
     handlePassword = (text) =>{
         this.setState({password : text})
     }
-    handleSubmit = () => {
-        alert(this.state.username, this.state.password)
+
+    checkAuth() {
+        if (this.state.username === "ayam"){
+            return true;
+        }
+        return false;
     }
+    handleSubmit = () => {
+        if (this.checkAuth()){
+            Actions.login();
+            return;
+        }
+        alert("Wrong Auth");
+    }
+
     render(){
         return(
             <View style = {styles.container}>
