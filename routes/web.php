@@ -33,9 +33,9 @@ $router->post("/hospital/newdata","HospitalController@insertData");
 $router->post("/hospital/login","HospitalController@login");
 
 $router->group(['prefix' => 'patients'], function () use ($router) {
-    $router->get('',  ['uses' => 'PatientsController@showAll']);
-    $router->get('/{id}', ['uses' => 'PatientsController@show']);
-    $router->post('', ['uses' => 'PatientsController@create']);
-    $router->delete('/{id}', ['uses' => 'PatientsController@delete']);
-    $router->put('/{id}', ['uses' => 'PatientsController@update']);
+    $router->get(   '',         ['uses' => 'PatientsController@showAll']);
+    $router->get(   '/{id}',    ['uses' => 'PatientsController@show']);
+    $router->post(  '',         ['uses' => 'PatientsController@create']);
+    $router->delete('/{id}',    ['uses' => 'PatientsController@delete']);
+    $router->put(   '/{id}',    ['uses' => 'PatientsController@update']);
 });
