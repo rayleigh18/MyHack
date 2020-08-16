@@ -22,16 +22,12 @@ $router->get('/', function () {
 $router->post("/register", "UsersController@register");
 $router->post("/login", "UsersController@login");
 
-$router->get('/patients',function () {
+$router->get('/mypatients',function () {
     return view('patients');
 });
 $router->get('/patients/list/{service}','HospitalController@myPatients');
 
-$router->get('/services',['middleware'=>'auth',function(Request $request){
-    $userRS = Auth::users()->hospitals();
-    $services = $userRS->services();
-    return $services;
-}]);
+$router->get('/services/list','HospitalController@myServices');
 
 $router->post("/hospital/newdata","HospitalController@insertData");
 $router->post("/hospital/login","HospitalController@login");

@@ -62,12 +62,12 @@ class HospitalController extends Controller
 
     public function myServices(Request $req)
     {
-        return Services::where('hospital_id',Auth::user()->hospital()->id);
+        return ServicesHospital::where('hospital_id',Auth::user()->hospital()->first()->id)->join('services','services.id','=','services_in_hospital.service_id')->get();
     }
 
     public function myPatients(Request $req,$service)
     {
-        $listPatienst = PatiensQueue::where('service_id',$service)->where('hospital_id',Auth::user()->hospital()->id)->where('terlayani',false)->all();
+        $listPatienst = PatiensQueue::where('service_id',$service)->where('hospital_id',Auth::user()->hospital()->first()->id)->join('patients','patients.id','=','patiens_queue.patien_id')->get();
         return $listPatienst;
     }
 

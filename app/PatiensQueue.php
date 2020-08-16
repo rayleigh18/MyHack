@@ -18,4 +18,5 @@
          * @var array
          */
       protected $fillable = ['patien_id','hospital_id','services_id','queue_number','keluhan'];
+      protected $table = 'patiens_queue';
     }

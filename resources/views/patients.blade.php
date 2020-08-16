@@ -20,13 +20,18 @@
         </ul>
         </div>
     </nav>
+    <div class="container row" style="margin-top: 10px;">
+    <div class="input-field col s6">
+        <select id="serviceoption">
+        <option value="" disabled selected>Choose your option</option>
+        </select>
+        <label>Pelayanan Rumah Sakit</label>
+    </div>
+    </div>
     <div id="antrian" class="container">
         <div class="card">
             <div class="card-content">
-            <span class="card-title">Card Title</span>
-            <a href="#" class="btn" style="position: absolute; right: 15px; top: 15px;">Hadir</a>
-            <p>Keluhan saya sering kelebihan sel darah putih yang harus dikeluarkan dibantu oleh dokter wanita.</p>
-            <p>10-01-2020</p>
+            <span class="card-title">Daftar Pasien</span>
             </div>
             </div>
         </div>
@@ -154,6 +159,25 @@
         });
         </script>
         <script>
+            $(document).ready(function(){
+                $.ajax({
+                url: "/services/list/",
+                method: "GET",
+                headers: {
+                            "Authorization" : `Bearer ${decodeURIComponent(readCookie('api_token'))}`
+                        },
+                success: function (response) {
+                    console.log(response);
+                    response.forEach(service => {
+                    $("#serviceoption").append(`<option value="${service.service_id}">${service.type}</option>`)
+                    });
+                    $('select').formSelect();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+            });
+            });
             $('#loginForm').submit(function(e){
                  /* Get from elements values */
                  e.preventDefault();
@@ -171,29 +195,33 @@
                     }
                 });
             })
-            $.ajax({
-                url: url,
-                method: "get",
-                headers: {
-                            "Authorization" : "Bearer "+readCookie('api_token')
-                        },
-                success: function (response) {
-                    JSON.encode(response).forEach(patients => {
-                    $(#antrian).append(`<div class="card">
-                            <div class="card-content">
-                            <span class="card-title">${patients.name}</span>
-                            <a href="#" class="btn" style="position: absolute; right: 15px; top: 15px;">Hadir</a>
-                            <p>${patients.keluhan}</p>
-                            <p>${patients.created_at}</p>
-                            </div>
-                            </div>
-                        </div>`)
-                    });
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(textStatus, errorThrown);
-                }
-            });
+            $("#serviceoption").change(function(){
+                $.ajax({
+                    url: "/patients/list/"+$(this).val(),
+                    method: "GET",
+                    headers: {
+                                "Authorization" : `Bearer ${decodeURIComponent(readCookie('api_token'))}`
+                            },
+                    success: function (response) {
+                        console.log(response);
+                        response.forEach(patients => {
+                        $("#antrian").append(`<div class="card">
+                                <div class="card-content">
+                                <span class="card-title">${patients.name}</span>
+                                <a href="#" class="btn" style="position: absolute; right: 15px; top: 15px;">Hadir</a>
+                                <p>${patients.keluhan}</p>
+                                <p>${patients.created_at}</p>
+                                </div>
+                                </div>
+                            </div>`)
+                        });
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            })
+            
         </script>
     </body>
 </html>
