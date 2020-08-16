@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import {TouchableOpacity, StyleSheet, Text, View, Picker} from 'react-native';
 import Device from "../../Device";
-import '../../index.css';
+// import '../../index.css';
 import Icon from 'react-native-vector-icons/MaterialIcons'
-// import RNPickerSelect from 'react-native-picker-select'
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 

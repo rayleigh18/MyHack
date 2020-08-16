@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import {TouchableOpacity, StyleSheet, Text, View, Button, FlatList, Image } from 'react-native';
 import Device from "../../Device";
-import '../../index.css';
+// import '../../index.css';
 import data from '../../data/json/sample.json'
 import HospitalItem from '../Component/HospitalItem';
 import Icon from 'react-native-vector-icons/MaterialIcons'
+// import './DetailResult'
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // const Tab = createBottomTabNavigator();
+
   
 export default class ShowResult extends Component{
     render(){
@@ -96,7 +98,7 @@ const styles = StyleSheet.create({
     },
     buttons : {
         marginTop : 15,
-        fontFamily : 'Raleway',
+        fontFamily : 'Raleway-Regular',
         alignItems : 'center',
         width : 0.7*Device.Width,
         height : 44,

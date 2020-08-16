@@ -20,12 +20,13 @@ return(
             </TouchableOpacity>
         </View>
         <View style={styles.body}>
-            <Text style={styles.queueeNum}><b>16</b></Text>
+            <Text style={styles.queueeNum}>16</Text>
             <Text style={styles.queueDesc}>Current Queuee Number</Text>
-            <Text style={styles.queueeNum}><b>28</b></Text>
+            <Text style={styles.queueeNum}>28</Text>
             <Text style={styles.queueDesc}>Your Queuee Number</Text>
             <Text style={styles.timeEst}>You turn will begin about 26 minutes later</Text>
-            <Text style={styles.additionalText}>While waiting your turn, You can read or health articles <a style={{color : '#278CA1'}}>here</a></Text>
+            <Text style={styles.additionalText}>While waiting your turn, You can read or health articles</Text>
+            <Text style={{color : '#278CA1'}}>here</Text>
         </View>
         <View style={styles.tabBarContainer}>
             <View style={styles.tabBar}>

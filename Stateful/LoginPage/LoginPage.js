@@ -2,15 +2,51 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
 import Device from "../../Device";
 import {main_logo} from "../../assets/img/index";
-import { ScrollView } from 'react-native-gesture-handler';
-import { Actions } from 'react-native-router-flux';
+import GetLocation from 'react-native-get-location'
 
 
 export default class LoginPage extends Component{
     state = {
         username : '',
-        password : ''
+        password : '',
+        location: null,
+        loading: false
     }
+    _requestLocation = () => {
+        this.setState({ loading: true, location: null });
+
+        GetLocation.getCurrentPosition({
+            enableHighAccuracy: true,
+            timeout: 150000,
+        })
+            .then(location => {
+                this.setState({
+                    location,
+                    loading: false,
+                });
+            })
+            .catch(ex => {
+                const { code, message } = ex;
+                console.warn(code, message);
+                if (code === 'CANCELLED') {
+                    Alert.alert('Location cancelled by user or by another request');
+                }
+                if (code === 'UNAVAILABLE') {
+                    Alert.alert('Location service is disabled or unavailable');
+                }
+                if (code === 'TIMEOUT') {
+                    Alert.alert('Location request timed out');
+                }
+                if (code === 'UNAUTHORIZED') {
+                    Alert.alert('Authorization denied');
+                }
+                this.setState({
+                    location: null,
+                    loading: false,
+                });
+            });
+    }
+
     constructor(){
         super();
         
@@ -25,10 +61,10 @@ export default class LoginPage extends Component{
         alert(this.state.username, this.state.password)
     }
     render(){
+        const { username, password, location, loading } = this.state
         return(
             <View style = {styles.container}>
-                <ScrollView>
-                    <View style = {styles.container_in}>
+                <View style = {styles.container_in}>
                     <Text style = {styles.judul}>GO-RS</Text> 
                     <Image source={main_logo} style={styles.mainLogo} />
                     <Text >Username</Text>
@@ -49,15 +85,13 @@ export default class LoginPage extends Component{
                     }}>Forgot Password?</Text>
                     <Button title = "Submit"
                             color = "#278CA1"
-                            onPress = {this.handleSubmit}/>
-                    <Text>First Time?</Text>
-                    <Text style = {{
-                        paddingBottom : 20,
-                    }} onPress = {()=>Actions.signup()}>Sign Up</Text>
+                            onPress = {() =>{
+                                this.handleSubmit;
+                                this._requestLocation;
+                            }}/>
+                    <Text>First Time? Sign Up</Text>
                 </View>
                
-                </ScrollView>
-                
             </View>
         );
     }
@@ -66,6 +100,7 @@ export default class LoginPage extends Component{
 const styles = StyleSheet.create({
     container : {
         backgroundColor : '#2BA4B9',
+        height : Device.Height,
         alignItems : "center",
     },
     container_in : {
