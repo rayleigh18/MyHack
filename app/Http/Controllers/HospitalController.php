@@ -96,5 +96,14 @@ class HospitalController extends Controller
   
         }
     }
+
+    public function near(Request $req, $x, $y)
+    {
+        $hospitals = Hospitals::all();
+        foreach ($hospitals as $hospital) {
+            $hospital->distance = sqrt(pow(($x-$hospital->x),2)+pow(($y-$hospital->y),2));
+        }
+        return $hospitals->sortBy('distance');
+    }
     //
 }
