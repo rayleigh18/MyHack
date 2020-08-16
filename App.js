@@ -21,22 +21,20 @@ export default class App extends Component {
   isLogInVar(){
     return(
       <Stack key = "login" >
-              <Scene key = "checkDaftar"
-              hideNavBar
-                component = {PendaftaranCheck}
-                title = "Check Register"/>
-              <Scene key = "getQueue"
-              hideNavBar
-                component = {GetQueuee}
-                renderTitle = {
-                  () => renderTitle()
-                } />
-
-              <Scene key = "queueCount"
-                hideNavBar
-                component={QueueeCounter}
-                />
-        </Stack>
+        <Scene key = "checkDaftar"
+        hideNavBar
+          component = {PendaftaranCheck}
+          title = "Check Register"/>
+        <Scene key = "getQueue"
+        hideNavBar
+          component = {GetQueuee}
+          renderTitle = {
+            () => renderTitle()
+          } />
+        <Scene key = "queueCount"
+          hideNavBar
+          component={QueueeCounter}/>
+      </Stack>
     );
   }
   notIsLogInVar(){

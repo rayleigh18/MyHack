@@ -12,8 +12,7 @@ export default class LoginPage extends Component{
         password : ""
     }
     constructor(){
-        super();
-        
+        super();        
     }
     handleUsername = (text) =>{
         this.setState({username : text})
