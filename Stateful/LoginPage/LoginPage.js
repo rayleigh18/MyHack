@@ -48,8 +48,7 @@ export default class LoginPage extends Component{
     }
 
     constructor(){
-        super();
-        
+        super();        
     }
     handleUsername = (text) =>{
         this.setState({username : text})
@@ -57,9 +56,21 @@ export default class LoginPage extends Component{
     handlePassword = (text) =>{
         this.setState({password : text})
     }
-    handleSubmit = () => {
-        alert(this.state.username, this.state.password)
+
+    checkAuth() {
+        if (this.state.username === "ayam"){
+            return true;
+        }
+        return false;
     }
+    handleSubmit = () => {
+        if (this.checkAuth()){
+            Actions.login();
+            return;
+        }
+        alert("Wrong Auth");
+    }
+
     render(){
         const { username, password, location, loading } = this.state
         return(

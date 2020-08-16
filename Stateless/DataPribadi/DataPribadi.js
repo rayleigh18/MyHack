@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, CheckBox, Button } from 'react-native';
 import Device from "../../Device"
-import HeadInput from "../Component/HeadInput"
+import HeadInput from "../Component/HeadInput";
+import {Action, Actions} from "react-native-router-flux";
 import CardView from 'react-native-cardview'
 
 const DataPribadi = () =>{
@@ -12,7 +13,6 @@ const DataPribadi = () =>{
     const [work, onChangeWork] = React.useState("");
     
 return(
-    
     <View style = {styles.container}>
         <Text style = {styles.judul}>
             DATA PRIBADI
@@ -43,6 +43,9 @@ return(
         <View style = {styles.buttons}>
             <Button title = "NEXT"
                 color = "#278CA1"
+                onPress = {() => {
+                    Actions.signup3();
+                }}
             />
         </View>
         
